@@ -92,6 +92,7 @@ Template valiables
 
 * %post_id% - ID of the Page
 * %width% - Width of block for single page
+* %siblings% - If set to true, will show siblings instead of children
 * %post_url% - Page permalink
 * %post_thumb% - <img> for Post thubmail
 * %post_title% - Page title
