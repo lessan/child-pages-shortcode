@@ -219,7 +219,9 @@ private function get_template()
     $html .= '<div class="post_thumb"><a href="%post_url%">%post_thumb%</a></div>';
     $html .= '<div class="post_content">';
     $html .= '<h4><a href="%post_url%">%post_title%</a></h4>';
-    $html .= '<div class="post_excerpt">%post_excerpt%</div>';
+    $html .= '<div class="post_excerpt">%post_excerpt%';
+    $html .= '<div style="text-align:right"><a class="small-button smallsilver" href="%post_url%">Read more &raquo;</a></div>';
+    $html .= '</div><!-- .post_excerpt  -->';
     $html .= '</div><!-- .post_content  -->';
     $html .= '</div><!-- .child_page-container -->';
     $html .= '</div><!-- #child_page-%post_id%" -->';
