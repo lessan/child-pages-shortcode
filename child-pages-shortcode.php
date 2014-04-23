@@ -81,6 +81,10 @@ public function shortcode($p, $template = null)
 		$p['id'] = get_the_ID();
 	}
 
+    if( !isset($p['siblings']) || !$p['siblings'] || $p['siblings'] == 'false'){
+        $p['siblings'] = false;
+    }
+
     if (!isset($p['size']) || !$p['size']) {
         $p['size'] = 'thumbnail';
     }
@@ -143,6 +147,16 @@ private function display($p, $block_template)
         'order' => 'ASC',
         'nopaging' => true,
     );
+
+    /*
+     * If showing siblings, get the parent's children and exclude the current post
+     *
+     * @since none
+     */
+    if ($p['siblings'] !== false) {
+	$args['post_parent'] = $post->post_parent;
+	$args['exclude'] = $p['id'];
+    }
 
     /*
      * Filter the query args for the get_posts()
